@@ -21,17 +21,18 @@ const Sacar = ({ id, carteira }) => {
       return;
     }
 
-    if (carteira.saldo < saque) {
+    if (+carteira.saldo < +saque) {
       Alert.alert("Campo invalido", "Você não pode Sacar mais do que tem");
       return;
     }
 
-    if (carteira.limite < saque) {
+    if (+carteira.limite < +saque) {
       Alert.alert("Campo invalido", "Você não pode Sacar mais do que seu limite");
       return;
     }
 
-    if (8 > date.getHours() && date.getHours() < 18) {
+    console.log(date.getHours() > 18);
+    if (date.getHours() < 8 || date.getHours() > 18) {
       Alert.alert("Desativado", "Saques não ocorrem às " + date.getHours());
       return;
     }

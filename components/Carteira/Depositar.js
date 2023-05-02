@@ -22,7 +22,7 @@ const Depositar = ({ id, carteira }) => {
             return
         }
 
-        if (8 > date.getHours() && date.getHours() < 18) {
+        if (date.getHours() < 8 || date.getHours() > 18) {
             Alert.alert("Desativado", "Depósitos não ocorrem às " + date.getHours());
             return;
         }

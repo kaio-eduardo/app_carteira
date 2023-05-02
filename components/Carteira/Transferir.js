@@ -30,7 +30,7 @@ const Transferir = ({ carteira }) => {
         return
     } 
 
-    if (carteira.saldo < transferir) {
+    if (+carteira.saldo < +transferir) {
       Alert.alert(
         "Campo invalido",
         "Você não pode transferir mais do que seu saldo"
